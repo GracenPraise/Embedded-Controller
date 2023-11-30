@@ -1,0 +1,144 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: •ÏVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: eunchan kim, HGU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\eunchan\source\repos\EC\LAB\LAB6\LAB_Input_Capture.uvprojx
+Project File Date:  11/07/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+LAB_Timer_InputCaputre_Ultrasonic.c(16): warning: In file included from...
+../../lib\ecUART_simple.h(30): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void UART2_init();
+               ^
+                void
+../../lib\ecUART_simple.h(37): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(17): warning: non-portable path to file '"ecSysTick.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "ecSysTIck.h"
+         ^~~~~~~~~~~~~
+         "ecSysTick.h"
+LAB_Timer_InputCaputre_Ultrasonic.c(17): warning: In file included from...
+../../lib\ecSysTIck.h(24): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void SysTick_counter();
+                    ^
+                     void
+../../lib\ecSysTIck.h(35): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(19): warning: no previous extern declaration for non-static variable 'ovf_cnt' [-Wmissing-variable-declarations]
+uint32_t ovf_cnt = 0;
+         ^
+LAB_Timer_InputCaputre_Ultrasonic.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t ovf_cnt = 0;
+^
+LAB_Timer_InputCaputre_Ultrasonic.c(20): warning: no previous extern declaration for non-static variable 'distance' [-Wmissing-variable-declarations]
+float distance = 0;
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float distance = 0;
+^
+LAB_Timer_InputCaputre_Ultrasonic.c(21): warning: no previous extern declaration for non-static variable 'timeInterval' [-Wmissing-variable-declarations]
+float timeInterval = 0;
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(21): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float timeInterval = 0;
+^
+LAB_Timer_InputCaputre_Ultrasonic.c(22): warning: no previous extern declaration for non-static variable 'time1' [-Wmissing-variable-declarations]
+float time1 = 0;
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(22): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float time1 = 0;
+^
+LAB_Timer_InputCaputre_Ultrasonic.c(23): warning: no previous extern declaration for non-static variable 'time2' [-Wmissing-variable-declarations]
+float time2 = 0;
+      ^
+LAB_Timer_InputCaputre_Ultrasonic.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float time2 = 0;
+^
+LAB_Timer_InputCaputre_Ultrasonic.c(35): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                distance = (float) timeInterval * 0.034 / 2;    // [mm] -> [cm]
+                         ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+LAB_Timer_InputCaputre_Ultrasonic.c(35): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                distance = (float) timeInterval * 0.034 / 2;    // [mm] -> [cm]
+                           ^~~~~~~~~~~~~~~~~~~~ ~
+LAB_Timer_InputCaputre_Ultrasonic.c(36): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                printf("%f cm\r\n", distance);
+                ~~~~~~              ^~~~~~~~
+LAB_Timer_InputCaputre_Ultrasonic.c(47): warning: implicit conversion from 'uint32_t' (aka 'unsigned int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
+                time1 = ICAP_capture(TIM4, IC_1);                                                                       // Capture TimeStart
+                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+LAB_Timer_InputCaputre_Ultrasonic.c(51): warning: implicit conversion from 'uint32_t' (aka 'unsigned int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
+                time2 = ICAP_capture(TIM4, IC_2);                                                                       // Capture TimeEnd
+                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+LAB_Timer_InputCaputre_Ultrasonic.c(52): warning: implicit conversion from 'unsigned int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+                timeInterval = 10 * ((ovf_cnt * (TIM4->ARR+1)) + (time2 - time1));      // (10us * counter pulse -> [msec] unit) Total time of echo pulse
+                                      ~~~~~~~~^~~~~~~~~~~~~~~  ~
+LAB_Timer_InputCaputre_Ultrasonic.c(41): warning: no previous prototype for function 'TIM4_IRQHandler' [-Wmissing-prototypes]
+void TIM4_IRQHandler(void){
+     ^
+LAB_Timer_InputCaputre_Ultrasonic.c(41): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM4_IRQHandler(void){
+^
+static 
+17 warnings generated.
+compiling LAB_Timer_InputCaputre_Ultrasonic.c...
+linking...
+Program Size: Code=9532 RO-data=616 RW-data=4 ZI-data=1668  
+FromELF: creating hex file...
+".\Objects\test.axf" - 0 Error(s), 17 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\eunchan\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\eunchan\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

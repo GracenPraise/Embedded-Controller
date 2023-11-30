@@ -1,0 +1,211 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: •ÏVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: eunchan kim, HGU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\eunchan\source\repos\EC\LAB\LAB7\LAB Stepper Motor.uvprojx
+Project File Date:  11/10/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+LAB_Stepper Motor.c(13): warning: In file included from...
+../../lib\ecEXTI.h(33): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LAB_Stepper Motor.c(16): warning: non-portable path to file '"ecSysTick.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "ecSysTIck.h"
+         ^~~~~~~~~~~~~
+         "ecSysTick.h"
+LAB_Stepper Motor.c(16): warning: In file included from...
+../../lib\ecSysTIck.h(24): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void SysTick_counter();
+                    ^
+                     void
+../../lib\ecSysTIck.h(35): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LAB_Stepper Motor.c(26): warning: no previous extern declaration for non-static variable 'flag' [-Wmissing-variable-declarations]
+uint32_t flag = 0;
+         ^
+LAB_Stepper Motor.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t flag = 0;
+^
+LAB_Stepper Motor.c(62): warning: no newline at end of file [-Wnewline-eof]
+} 
+  ^
+6 warnings generated.
+compiling LAB_Stepper Motor.c...
+../../lib/ecStepper.c(2): warning: In file included from...
+../../lib/ecStepper.h(3): warning: In file included from...
+../../lib/ecSysTick.h(24): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void SysTick_counter();
+                    ^
+                     void
+../../lib/ecSysTick.h(35): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+../../lib/ecStepper.c(16): warning: no previous extern declaration for non-static variable 'direction' [-Wmissing-variable-declarations]
+uint32_t direction = 1; 
+         ^
+../../lib/ecStepper.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t direction = 1; 
+^
+../../lib/ecStepper.c(17): warning: no previous extern declaration for non-static variable 'step_delay' [-Wmissing-variable-declarations]
+uint32_t step_delay = 100; 
+         ^
+../../lib/ecStepper.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t step_delay = 100; 
+^
+../../lib/ecStepper.c(18): warning: no previous extern declaration for non-static variable 'step_per_rev' [-Wmissing-variable-declarations]
+uint32_t step_per_rev = 64*32;
+         ^
+../../lib/ecStepper.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t step_per_rev = 64*32;
+^
+../../lib/ecStepper.c(28): warning: padding struct 'State_full_t' with 3 bytes to align 'next' [-Wpadded]
+        uint32_t next[2];
+                 ^
+../../lib/ecStepper.c(32): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b1010,{S1,S3}},                                               // S0   
+         ^
+../../lib/ecStepper.c(33): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0110,{S2,S0}},                                               // S1
+         ^
+../../lib/ecStepper.c(34): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0101,{S3,S1}},                                               // S2
+         ^
+../../lib/ecStepper.c(35): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b1001,{S0,S2}}
+         ^
+../../lib/ecStepper.c(31): warning: no previous extern declaration for non-static variable 'FSM_full' [-Wmissing-variable-declarations]
+State_full_t FSM_full[4] = {  
+             ^
+../../lib/ecStepper.c(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+State_full_t FSM_full[4] = {  
+^
+../../lib/ecStepper.c(41): warning: padding struct 'State_half_t' with 3 bytes to align 'next' [-Wpadded]
+        uint32_t next[2];
+                 ^
+../../lib/ecStepper.c(45): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b1000,{S1,S7}},
+         ^
+../../lib/ecStepper.c(46): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b1010,{S2,S0}},
+         ^
+../../lib/ecStepper.c(47): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0010,{S3,S1}},
+         ^
+../../lib/ecStepper.c(48): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0100,{S4,S2}},
+         ^
+../../lib/ecStepper.c(49): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0110,{S5,S3}},
+         ^
+../../lib/ecStepper.c(50): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0100,{S6,S4}},
+         ^
+../../lib/ecStepper.c(51): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0101,{S7,S5}},
+         ^
+../../lib/ecStepper.c(52): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        {0b0001,{S0,S6}}
+         ^
+../../lib/ecStepper.c(44): warning: no previous extern declaration for non-static variable 'FSM_half' [-Wmissing-variable-declarations]
+State_half_t FSM_half[8] = { 
+             ^
+../../lib/ecStepper.c(44): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+State_half_t FSM_half[8] = { 
+^
+../../lib/ecStepper.c(97): warning: no previous prototype for function 'Stepper_pinOut' [-Wmissing-prototypes]
+void Stepper_pinOut (uint32_t state, uint32_t mode){    
+     ^
+../../lib/ecStepper.c(97): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Stepper_pinOut (uint32_t state, uint32_t mode){    
+^
+static 
+../../lib/ecStepper.c(116): warning: implicit conversion changes signedness: 'long' to 'unsigned long' [-Wsign-conversion]
+                step_delay = 60000 / (step_per_rev*whatSpeed); //YOUR CODE   // Convert rpm to  [msec] delay 
+                                                  ~^~~~~~~~~
+../../lib/ecStepper.c(120): warning: declaration shadows a variable in the global scope [-Wshadow]
+void Stepper_step(uint32_t steps, uint32_t direction, uint32_t mode){
+                                           ^
+../../lib/ecStepper.c(16): note: previous declaration is here
+uint32_t direction = 1; 
+         ^
+../../lib/ecStepper.c(147): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+                        GPIO_write(myStepper.port1, myStepper.pin1, myStepper._step_num);
+                        ~~~~~~~~~~                                  ~~~~~~~~~~^~~~~~~~~
+../../lib/ecStepper.c(148): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+                        GPIO_write(myStepper.port2, myStepper.pin2, myStepper._step_num);
+                        ~~~~~~~~~~                                  ~~~~~~~~~~^~~~~~~~~
+../../lib/ecStepper.c(149): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+                        GPIO_write(myStepper.port3, myStepper.pin3, myStepper._step_num);
+                        ~~~~~~~~~~                                  ~~~~~~~~~~^~~~~~~~~
+../../lib/ecStepper.c(150): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+                        GPIO_write(myStepper.port4, myStepper.pin4, myStepper._step_num);
+                        ~~~~~~~~~~                                  ~~~~~~~~~~^~~~~~~~~
+../../lib/ecStepper.c(22): warning: no previous extern declaration for non-static variable 'myStepper' [-Wmissing-variable-declarations]
+volatile Stepper_t myStepper; 
+                   ^
+../../lib/ecStepper.c(22): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile Stepper_t myStepper; 
+         ^
+29 warnings generated.
+compiling ecStepper.c...
+linking...
+Program Size: Code=2332 RO-data=440 RW-data=156 ZI-data=1692  
+FromELF: creating hex file...
+".\Objects\test.axf" - 0 Error(s), 35 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\eunchan\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\eunchan\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

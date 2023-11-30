@@ -1,0 +1,16 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\tu_timer_inputcapture_student_2023.o"
+".\objects\ecexti.o"
+".\objects\ecgpio.o"
+".\objects\ecrcc.o"
+".\objects\ecsystick.o"
+".\objects\ecpwm.o"
+".\objects\ecpinnames.o"
+".\objects\ecuart_simple.o"
+".\objects\ectim.o"
+".\objects\startup_stm32f411xe.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\test.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\test.map" -o .\Objects\test.axf
